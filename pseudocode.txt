@@ -1,0 +1,10 @@
+Logic for computer choice
+
+Create function called 'getComputerChoice'
+Get a random number between 0 and 1
+Multiply that number by 100
+Chop off the decimal portion of that number
+If the number is between 0 and 33, the choice is rock
+If the number is between 33 and 66, the choice is paper
+If the number is between 66 and 99, the choice is scissors
+Output the value
