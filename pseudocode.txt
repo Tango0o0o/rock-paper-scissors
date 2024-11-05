@@ -14,3 +14,8 @@ Logic for human choice
 Create a new function named "getHumanChoice"
 prompt user to enter an option
 return value and output
+
+Scoring
+
+Create vairiable for computer and user scores
+Default 0
