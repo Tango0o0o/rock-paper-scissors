@@ -7,7 +7,6 @@ function getComputerChoice() {
     number *= 100
     // Chop off the decimal portion of that number
     number = Math.floor(number)
-    console.log(number)
     // If the number is smaller than 33, the choice is rock
     if (number < 33) {
         return (computersentence + 'rock')
@@ -25,3 +24,20 @@ function getComputerChoice() {
 // Output the value
 
 console.log(getComputerChoice())
+
+// Logic for human choice
+
+// Create a new function named "getHumanChoice"
+function getHumanChoice() {
+    // prompt user to enter an option
+    userchoice = prompt("Enter rock, paper or scissors").toLowerCase()
+    // return value and output
+    return userchoice
+}
+
+console.log(getHumanChoice())
+
+// Scoring
+
+// Create vairiable for computer and user scores
+// Default 0
