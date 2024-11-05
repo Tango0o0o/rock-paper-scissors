@@ -8,3 +8,9 @@ If the number is between 0 and 33, the choice is rock
 If the number is between 33 and 66, the choice is paper
 If the number is between 66 and 99, the choice is scissors
 Output the value
+
+Logic for human choice
+
+Create a new function named "getHumanChoice"
+prompt user to enter an option
+return value and output
