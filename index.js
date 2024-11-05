@@ -41,3 +41,5 @@ console.log(getHumanChoice())
 
 // Create vairiable for computer and user scores
 // Default 0
+humanScore = 0
+computerScore = 0

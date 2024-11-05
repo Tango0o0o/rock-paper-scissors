@@ -1,21 +1,35 @@
 Logic for computer choice
 
-Create function called 'getComputerChoice'
-Get a random number between 0 and 1
-Multiply that number by 100
-Chop off the decimal portion of that number
-If the number is between 0 and 33, the choice is rock
-If the number is between 33 and 66, the choice is paper
-If the number is between 66 and 99, the choice is scissors
-Output the value
+    Create function called 'getComputerChoice'
+    Get a random number between 0 and 1
+    Multiply that number by 100
+    Chop off the decimal portion of that number
+    If the number is between 0 and 33, the choice is rock
+    If the number is between 33 and 66, the choice is paper
+    If the number is between 66 and 99, the choice is scissors
+    Output the value
 
 Logic for human choice
 
-Create a new function named "getHumanChoice"
-prompt user to enter an option
-return value and output
+    Create a new function named "getHumanChoice"
+    prompt user to enter an option
+    return value and output
 
 Scoring
 
-Create vairiable for computer and user scores
-Default 0
+    Create vairiable for computer and user scores
+    Default 0
+
+Logic to play a round
+
+    New function called playRound
+    Take parameters of humanChoice and ComputerChoice 
+    Determine who won
+    Output result
+    Award one point to winner
+
+Logic to play whole game
+
+    New function called playGame
+    Declare playround in laygae
+    Repeat playRound 5 times
