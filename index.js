@@ -44,30 +44,40 @@ function getHumanChoice() {
 humanScore = 0
 computerScore = 0
 
-// Logic to play a round
-
-// New function called playRound
-function playRound(humanChoice, ComputerChoice) { // Take parameters of humanChoice and ComputerChoice 
-
-    console.log(`You chose ${humanChoice} and the computer chose ${ComputerChoice}`)
-    // Determine who won
-    // Output result
-    // Award one point to winner
-    if (humanChoice == 'rock' && ComputerChoice == 'scissors' || humanChoice == 'scissors' && ComputerChoice == 'paper' || humanChoice == 'paper' && ComputerChoice == 'rock') {
-        humanScore += 1
-        return ('You win!')
-    } else if (humanChoice == ComputerChoice) {
-        return ('Draw')
-    } else {
-        computerScore += 1
-        return ('You lose!')
-    }
-}
-
-console.log(playRound(getHumanChoice(), getComputerChoice()))
 
 // Logic to play whole game
 
 // New function called playGame
-// Declare playround in laygae
-// Repeat playRound 5 times
+// Declare playround in playgame
+function playGame() {
+
+    // Logic to play a round
+
+    // New function called playRound
+    function playRound(humanChoice, ComputerChoice) { // Take parameters of humanChoice and ComputerChoice 
+
+        console.log(`You chose ${humanChoice} and the computer chose ${ComputerChoice}`)
+        // Determine who won
+        // Output result
+        // Award one point to winner
+        if (humanChoice == 'rock' && ComputerChoice == 'scissors' || humanChoice == 'scissors' && ComputerChoice == 'paper' || humanChoice == 'paper' && ComputerChoice == 'rock') {
+            humanScore += 1
+            return ('You win!')
+        } else if (humanChoice == ComputerChoice) {
+            computerScore += 1
+            humanScore += 1
+            return ('Draw')
+        } else {
+            computerScore += 1
+            return ('You lose!')
+        }
+    }
+
+    // Repeat playRound 5 times
+    for (let i = 0; i < 5; i++) {
+        console.log(playRound(getHumanChoice(), getComputerChoice()))
+        console.log(`The score is you ${humanScore}, computer ${computerScore}`)
+    }
+}
+
+playGame()
