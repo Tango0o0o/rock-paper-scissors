@@ -1,5 +1,5 @@
 // Create function called 'getComputerChoice'
-computersentence = 'Computer chose '
+
 function getComputerChoice() {
     // Get a random number between 0 and 1
     number = Math.random()
@@ -9,21 +9,21 @@ function getComputerChoice() {
     number = Math.floor(number)
     // If the number is smaller than 33, the choice is rock
     if (number < 33) {
-        return (computersentence + 'rock')
+        return ('rock')
     } 
     // If the number is between 33 and 66, the choice is paper
     else if (33 < number && number < 66) {
-        return (computersentence + 'paper')
+        return ('paper')
     }
     // If the number is between 66 and 99, the choice is scissors
     else {
-        return (computersentence + 'scissors')
+        return ('scissors')
     }
 }
 
 // Output the value
 
-console.log(getComputerChoice())
+// console.log(getComputerChoice())
 
 // Logic for human choice
 
@@ -35,7 +35,7 @@ function getHumanChoice() {
     return userchoice
 }
 
-console.log(getHumanChoice())
+
 
 // Scoring
 
@@ -43,3 +43,31 @@ console.log(getHumanChoice())
 // Default 0
 humanScore = 0
 computerScore = 0
+
+// Logic to play a round
+
+// New function called playRound
+function playRound(humanChoice, ComputerChoice) { // Take parameters of humanChoice and ComputerChoice 
+
+    console.log(`You chose ${humanChoice} and the computer chose ${ComputerChoice}`)
+    // Determine who won
+    // Output result
+    // Award one point to winner
+    if (humanChoice == 'rock' && ComputerChoice == 'scissors' || humanChoice == 'scissors' && ComputerChoice == 'paper' || humanChoice == 'paper' && ComputerChoice == 'rock') {
+        humanScore += 1
+        return ('You win!')
+    } else if (humanChoice == ComputerChoice) {
+        return ('Draw')
+    } else {
+        computerScore += 1
+        return ('You lose!')
+    }
+}
+
+console.log(playRound(getHumanChoice(), getComputerChoice()))
+
+// Logic to play whole game
+
+// New function called playGame
+// Declare playround in laygae
+// Repeat playRound 5 times
