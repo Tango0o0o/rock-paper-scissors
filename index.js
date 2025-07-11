@@ -19,7 +19,7 @@ function getComputerChoice() {
     else {
         return ('scissors')
     }
-}
+} 
 
 // Output the value
 
@@ -49,35 +49,67 @@ computerScore = 0
 
 // New function called playGame
 // Declare playround in playgame
-function playGame() {
+// function playGame() {
 
-    // Logic to play a round
+//     // Logic to play a round
 
     // New function called playRound
-    function playRound(humanChoice, ComputerChoice) { // Take parameters of humanChoice and ComputerChoice 
 
-        console.log(`You chose ${humanChoice} and the computer chose ${ComputerChoice}`)
-        // Determine who won
-        // Output result
-        // Award one point to winner
-        if (humanChoice == 'rock' && ComputerChoice == 'scissors' || humanChoice == 'scissors' && ComputerChoice == 'paper' || humanChoice == 'paper' && ComputerChoice == 'rock') {
-            humanScore += 1
-            return ('You win!')
-        } else if (humanChoice == ComputerChoice) {
-            computerScore += 1
-            humanScore += 1
-            return ('Draw')
-        } else {
-            computerScore += 1
-            return ('You lose!')
-        }
-    }
+let human_score = document.getElementById("h-score");
+let comp_score = document.getElementById("c-score");
+let game_act = document.getElementById("game-action")
+function updatescores() {
+    human_score.innerHTML = "You " + humanScore;
+    comp_score.innerHTML = "Computer " + computerScore;
+};
 
-    // Repeat playRound 5 times
-    for (let i = 0; i < 5; i++) {
-        console.log(playRound(getHumanChoice(), getComputerChoice()))
-        console.log(`The score is you ${humanScore}, computer ${computerScore}`)
+function playRound(humanChoice, ComputerChoice) { // Take parameters of humanChoice and ComputerChoice 
+
+
+    game_act.innerHTML = `You chose ${humanChoice} and the computer chose ${ComputerChoice}`
+    // Determine who won
+    // Output result
+    // Award one point to winner
+    if (humanChoice == 'rock' && ComputerChoice == 'scissors' || humanChoice == 'scissors' && ComputerChoice == 'paper' || humanChoice == 'paper' && ComputerChoice == 'rock') {
+        humanScore += 1
+        updatescores();
+        return ('You win!')
+    } else if (humanChoice == ComputerChoice) {
+        computerScore += 1
+        humanScore += 1
+        updatescores();
+        return ('Draw')
+    } else {
+        computerScore += 1
+        updatescores();
+        return ('You lose!')
     }
+    
+
 }
 
-playGame()
+    // Repeat playRound 5 times
+    // for (let i = 0; i < 5; i++) {
+    //     console.log(playRound(getHumanChoice(), getComputerChoice()))
+    //     console.log(`The score is you ${humanScore}, computer ${computerScore}`)
+    // }
+// }
+
+// get every button in a list, add event listener to each, passing value into playround then.
+
+const btn_container = document.getElementById("buttons"); // get the container
+
+const buttons = btn_container.querySelectorAll("*"); // select every element inside it (NodeList)
+
+const buttonsarray = Array.from(buttons); // NodeList into array
+
+const result = document.getElementById("result");
+for (const i in buttonsarray) {
+    buttonsarray[i].addEventListener("click", function () {
+        result.innerHTML = "Result: " + playRound(buttonsarray[i].innerHTML.toLowerCase(), getComputerChoice());
+    });
+};
+
+
+
+// playGame()

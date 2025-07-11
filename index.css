@@ -1,0 +1,34 @@
+#rock-btn {
+    background-color: green;
+}
+
+#paper-btn {
+    background-color: red;
+}
+
+#scissors-btn {
+    background-color: blue;
+    color: white;
+}
+
+button {
+    border-radius: 7px;
+    border: none;
+    padding: 5px;
+    font-size: large;
+} /*style for each button*/
+
+#game-ctnr{
+    text-align: center;
+    background-color: aqua;
+} /* center everything in the game screen */
+
+body { /* center the game */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh;
+
+    font-family:'Courier New', Courier, monospace;
+}
