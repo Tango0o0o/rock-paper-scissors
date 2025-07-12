@@ -65,7 +65,7 @@ function updatescores() {
 
 function playRound(humanChoice, ComputerChoice) { // Take parameters of humanChoice and ComputerChoice 
 
-
+    console.log(humanChoice, ComputerChoice);
     game_act.innerHTML = `You chose ${humanChoice} and the computer chose ${ComputerChoice}`
     // Determine who won
     // Output result
@@ -97,19 +97,47 @@ function playRound(humanChoice, ComputerChoice) { // Take parameters of humanCho
 
 // get every button in a list, add event listener to each, passing value into playround then.
 
-const btn_container = document.getElementById("buttons"); // get the container
 
-const buttons = btn_container.querySelectorAll("*"); // select every element inside it (NodeList)
+// basically here, we are linking each clickable container to the button so we can retrieve the innerHTML to pass into playRound
+const action_ctnrs = document.getElementsByClassName("action-ctnr"); // get the container
+const buttons = document.getElementsByClassName("action-btn"); // get the buttons
 
+
+// const buttons = btn_container.querySelectorAll("*"); // select every element inside it (NodeList)
+
+const action_ctnrs_array = Array.from(action_ctnrs); // NodeList into array
 const buttonsarray = Array.from(buttons); // NodeList into array
 
+
 const result = document.getElementById("result");
-for (const i in buttonsarray) {
-    buttonsarray[i].addEventListener("click", function () {
-        result.innerHTML = "Result: " + playRound(buttonsarray[i].innerHTML.toLowerCase(), getComputerChoice());
+for (const i in action_ctnrs_array) { 
+    action_ctnrs_array[i].addEventListener("click", function () { //add eventlistener to each container
+        result.innerHTML = "Result: " + playRound(buttonsarray[i].innerHTML.toLowerCase(), getComputerChoice()); //using innerhtml of each button
     });
 };
 
 
 
-// playGame()
+// Ok, transitionin + animating the colors of the action containers on hover
+
+for (const i in action_ctnrs_array) {
+    action_ctnrs_array[i].addEventListener("mouseover", function() {
+        action_ctnrs_array[i].style.transition = "background-color 0.5s"
+        action_ctnrs_array[i].style.transition = "transform 0.5s";
+        ;
+        action_ctnrs_array[i].style.backgroundColor = "#22ff00";
+        action_ctnrs_array[i].style.transform = "translate(-10px, -10px)";
+        action_ctnrs_array[i].style.boxShadow = "10px 10px black";
+
+    });
+
+    action_ctnrs_array[i].addEventListener("mouseout", function() {
+        action_ctnrs_array[i].style.transition = "background-color 0.2s";
+
+
+        action_ctnrs_array[i].style.backgroundColor = action_ctnrs_array[i].dataset.color;
+        action_ctnrs_array[i].style.transform = "translate(0px,0px)"
+        action_ctnrs_array[i].style.boxShadow = "none"
+
+    });
+};

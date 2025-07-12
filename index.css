@@ -1,22 +1,50 @@
-#rock-btn {
+#rock-ctnr {
     background-color: green;
 }
 
-#paper-btn {
+#paper-ctnr {
     background-color: red;
 }
 
-#scissors-btn {
+#scissors-ctnr{
     background-color: blue;
     color: white;
 }
 
+.action-btn {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.action-ctnr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    gap: 10px;
+
+    transition: background-color 2s;
+}
+
+
+
 button {
-    border-radius: 7px;
+    border-radius: 6px;
     border: none;
     padding: 5px;
     font-size: large;
 } /*style for each button*/
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
 
 #game-ctnr{
     text-align: center;
@@ -31,4 +59,14 @@ body { /* center the game */
     height: 100vh;
 
     font-family:'Courier New', Courier, monospace;
+}
+
+img {
+    height: 50px;
+}
+
+
+
+@keyframes onhover {
+    to {background-color: white;}
 }
