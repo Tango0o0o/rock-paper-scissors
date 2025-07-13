@@ -1,20 +1,36 @@
-#rock-ctnr {
-    background-color: green;
+/* The colors of the buttons/clickable container elements were set in javascript to utilise the "data-color" attribute set in html on each item in the "action-ctnr" class */
+
+
+body { /* center the game */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh;
+
+    font-family:'Courier New', Courier, monospace;
+    font-size: 30px;
+
 }
 
-#paper-ctnr {
-    background-color: red;
+button {
+    border-radius: 6px;
+    border: none;
+    padding: 5px;
+    font-size: large;
+} /*style for each button*/
+
+
+img {
+    height: 50px; 
 }
 
-#scissors-ctnr{
-    background-color: blue;
-    color: white;
-}
-
+/* make the actual buttons transparent */
 .action-btn {
     background-color: rgba(0, 0, 0, 0);
 }
 
+/* Organising the elements inside the clickable actions "rock paper scissors" for the user */
 .action-ctnr {
     display: flex;
     flex-direction: column;
@@ -30,14 +46,7 @@
 }
 
 
-
-button {
-    border-radius: 6px;
-    border: none;
-    padding: 5px;
-    font-size: large;
-} /*style for each button*/
-
+/* Organising the clickable element containers themselves in a row */
 #buttons {
     display: flex;
     justify-content: center;
@@ -48,25 +57,4 @@ button {
 
 #game-ctnr{
     text-align: center;
-    background-color: aqua;
 } /* center everything in the game screen */
-
-body { /* center the game */
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
-    height: 100vh;
-
-    font-family:'Courier New', Courier, monospace;
-}
-
-img {
-    height: 50px;
-}
-
-
-
-@keyframes onhover {
-    to {background-color: white;}
-}
